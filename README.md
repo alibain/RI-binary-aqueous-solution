@@ -18,5 +18,4 @@ Input parameters:
   
   solute mass fraction: for inorganic solutes the mass fraction of each ion is entered indivisually. 
   
-  wavelength: wavelength in micrometers at which the refractive index will be calcualted.    
-  
+  wavelength: wavelength in micrometers at which the refractive index will be calcualted (Na D-line = 0.589 micrometers)

@@ -1,5 +1,5 @@
 # RI-binary-aqueous-solution
-Calculate the real part of the refractive index of aquesous solutions as a function of wavelngth in the visible region and solute concentration using the effective 
+Calculate the real part of the refractive index of aquesous solutions containing one orgnaic solute or one salt/strong acid containing two ions as a function of wavelngth in the visible region and solute concentration using the effective 
 oscillator model developed by Bain and Preston:
 
 Bain, A., & Preston, T. C. (2020). The wavelength-dependent optical properties of weakly absorbing aqueous aerosol particles. Chemical Communications, 56, 8928–8931.https://doi.org/10.1039/d0cc02737e
@@ -14,8 +14,20 @@ Daimon, M., & Masumura, A. (2007). Measurement of the refractive index of distil
 
 Input parameters: 
 
-  solutes: for inorganic solutes each ion is entered individually. 
+  solutes: for inorganic solutes each ion is entered individually, .
+  solute mass fraction: for inorganic solutes the mass fraction of each ion is entered individually. 
+    Example for ionrganic solute made of 2 ions: input=[['NH4',0.0546],['SO4',0.14539]]
+    Example for organic solute: input=[['malonic acid',0.2]]
   
-  solute mass fraction: for inorganic solutes the mass fraction of each ion is entered indivisually. 
-  
-  wavelength: wavelength in micrometers at which the refractive index will be calcualted (Na D-line = 0.589 micrometers)
+  wavelength: wavelength in micrometers at which the refractive index will be calcualted (Na D-line = 0.589 micrometers) Can accept a single wavelength or an array       of wavelengths:
+    Example for 2 discrete wavlenghts: wavelength=np.array([0.589,0.650])
+    Example for a range of wavelengths: wavelength=np.linspace(0.3,0.7,5,endpoint=True)
+    
+Import Oscillator data for solute: Ion oscillator parameter are in 'oscillator-parameters.txt' file. Change the file path to wherever this is saved.
+  file=(".../oscillator-parameters.txt") #full path for file
+
+OutPut parameters:
+
+  Output file name and location. Output will be in .csv format. Change the name of the output directory and the base file name
+    Name of output directory: dir_name='' 
+    Base file name: base_filename=''
